@@ -37,3 +37,13 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — DOCUMENTATION CONTROL
+Status: Implemented
+Based on: V1
+Date: 2026-10-23
+Approval reference: User request in the current conversation to implement versioning/status, traceability, workflow, source/configuration alignment, audit trail, automated validation, and cross-file verification.
+Changed files: Existing 13 documentation files plus `scripts/validate_coding_prompt_docs.py` and `.github/workflows/coding-prompt-docs.yml`.
+Summary: Standardized lifecycle and audit statuses; added REQ-009–REQ-020 and AC-009–AC-020; defined workflow stage contracts; aligned source/configuration rules; added automated documentation validation and CI.
+Verification evidence: Pending execution of validator and cross-file checks. Do not mark V2 Verified until checks pass.
