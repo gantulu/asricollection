@@ -2,7 +2,7 @@
 
 ## VERSION INDEX
 - V1 — Baseline specification; status: Draft.
-- V2 — Reserved for additive changes; status: Proposed.
+- V2 — Reserved for additive changes; status: Implemented.
 - V3 — Reserved for subsequent additive changes; status: Proposed.
 
 ## VERSIONING RULES
@@ -35,9 +35,9 @@ Record a reviewable, file-level plan before code changes.
 A plan is not implementation authorization by itself. Mark proposed changes separately from completed changes. If the actual repository differs from the plan, pause the affected work and update the plan/seek approval when scope changes.
 
 ## VERSION V2 — ADDITIVE EXTENSION
-Status: Proposed
+Status: Implemented
 Based on: V1
-Changes: Not yet specified. Add approved additions here without deleting V1.
+Changes: See the V2 additive control sections in this file.
 
 ## VERSION V3 — ADDITIVE EXTENSION
 Status: Proposed
