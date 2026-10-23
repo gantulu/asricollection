@@ -55,3 +55,10 @@ Change summary: Define the reproducible audit record.
 - Cross-file checks: stable path inventory, version indexes, local links, REQ-to-AC mapping, YAML configuration, CI-to-validator link.
 - Limitations: inaccessible files and checks not run.
 - Conclusion: separate observed implementation facts from intended work; never infer absence from failed access.
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
