@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "README.md"
+      - "masterprompt.md"
       - "coding-prompt-system/**"
       - "scripts/validate_coding_prompt_docs.py"
       - ".github/workflows/coding-prompt-docs.yml"
