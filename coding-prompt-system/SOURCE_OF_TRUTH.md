@@ -55,3 +55,10 @@ Change summary: Clarify source precedence, authority, and conflict handling.
 - Project docs define intended requirements only to the extent their approval status supports it; Proposed material is not an approved contract.
 - If sources conflict, record both claims, their provenance and date/version when known, assess authority and scope, and stop affected work if the conflict changes correctness or safety.
 - If access fails, record Unverified/Blocked; do not infer absence.
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
