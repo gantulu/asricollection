@@ -55,3 +55,10 @@ Before changes, record task/scope, active version, in-scope and out-of-scope act
 
 ### Status gate
 Proposed work requires explicit approval when approval is required. Approved means authorized, not implemented. Implemented means the change exists. Verified means the named check ran and passed. Keep failed, skipped, and unavailable checks distinct.
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
