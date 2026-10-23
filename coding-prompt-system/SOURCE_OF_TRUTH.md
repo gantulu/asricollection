@@ -40,3 +40,18 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — EVIDENCE AND CONFLICT CONTRACT
+Status: Implemented
+Based on: V1
+Change summary: Clarify source precedence, authority, and conflict handling.
+
+### Operational rules
+- System/platform safety requirements always prevail.
+- Explicit user-approved scope governs what may be done, but cannot override higher-priority rules.
+- Actual repository content at the inspected commit is authoritative for current implementation facts; record the branch and commit.
+- Official vendor documentation is authoritative for that vendor's public API/behavior, not proof that the repository implements it.
+- Project docs define intended requirements only to the extent their approval status supports it; Proposed material is not an approved contract.
+- If sources conflict, record both claims, their provenance and date/version when known, assess authority and scope, and stop affected work if the conflict changes correctness or safety.
+- If access fails, record Unverified/Blocked; do not infer absence.
