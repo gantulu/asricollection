@@ -59,3 +59,10 @@ Change summary: Add traceable plan for documentation controls.
 - Verification: `python scripts/validate_coding_prompt_docs.py`, inspect stable paths/version headings, and confirm CI invokes validator.
 - Approval: Current user request authorizes these documentation controls only.
 - Rollback: Revert the documentation-only commit while preserving prior history.
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
