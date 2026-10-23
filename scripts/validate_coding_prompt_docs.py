@@ -1,24 +1,27 @@
 #!/usr/bin/env python3
-"""Validate Coding Prompt System documentation and cross-file traceability."""
+"""Validate documentation integrity, canonical ownership, and cross-file contracts."""
 from pathlib import Path
 import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = [
-    "README.md",
+    "README.md", "masterprompt.md",
     "coding-prompt-system/MASTER_PROMPT.md",
-    "coding-prompt-system/INSTRUCTION.md",
-    "coding-prompt-system/variables.yaml",
-    "coding-prompt-system/REQUIREMENTS.md",
-    "coding-prompt-system/ACCEPTANCE_CRITERIA.md",
-    "coding-prompt-system/WORKFLOW.md",
-    "coding-prompt-system/VERIFICATION.md",
-    "coding-prompt-system/CHANGELOG.md",
-    "coding-prompt-system/SOURCE_OF_TRUTH.md",
-    "coding-prompt-system/IMPLEMENTATION_PLAN.md",
-    "coding-prompt-system/AUDIT_REPORT.md",
-    "coding-prompt-system/DECISIONS.md",
+    "coding-prompt-system/INSTRUCTION.md", "coding-prompt-system/variables.yaml",
+    "coding-prompt-system/REQUIREMENTS.md", "coding-prompt-system/ACCEPTANCE_CRITERIA.md",
+    "coding-prompt-system/WORKFLOW.md", "coding-prompt-system/VERIFICATION.md",
+    "coding-prompt-system/CHANGELOG.md", "coding-prompt-system/SOURCE_OF_TRUTH.md",
+    "coding-prompt-system/IMPLEMENTATION_PLAN.md", "coding-prompt-system/AUDIT_REPORT.md",
+    "coding-prompt-system/DECISIONS.md", "scripts/validate_coding_prompt_docs.py",
+    ".github/workflows/coding-prompt-docs.yml",
+]
+SUPPORT_DOCS = [
+    "coding-prompt-system/INSTRUCTION.md", "coding-prompt-system/REQUIREMENTS.md",
+    "coding-prompt-system/ACCEPTANCE_CRITERIA.md", "coding-prompt-system/WORKFLOW.md",
+    "coding-prompt-system/VERIFICATION.md", "coding-prompt-system/CHANGELOG.md",
+    "coding-prompt-system/SOURCE_OF_TRUTH.md", "coding-prompt-system/IMPLEMENTATION_PLAN.md",
+    "coding-prompt-system/AUDIT_REPORT.md", "coding-prompt-system/DECISIONS.md",
 ]
 errors = []
 contents = {}
@@ -36,19 +39,39 @@ for rel in BASELINE:
     except (OSError, UnicodeError) as exc:
         error(f"cannot read {rel}: {exc}")
 
+# Canonical ownership must be explicit in the entry point and support documents.
+for rel in ["README.md", *SUPPORT_DOCS, "coding-prompt-system/variables.yaml"]:
+    content = contents.get(rel, "")
+    if "coding-prompt-system/MASTER_PROMPT.md" not in content:
+        error(f"{rel}: missing canonical reference to general coding master prompt")
+    if "masterprompt.md" not in content:
+        error(f"{rel}: missing canonical reference to Asri Collection project prompt")
+
+# Validate local Markdown links and explicit repository paths written in inline code.
 for rel, content in contents.items():
     if not rel.endswith(".md"):
         continue
-    for version in ("VERSION V1", "VERSION V2", "VERSION V3"):
-        if version not in content:
-            error(f"{rel}: missing {version} section")
     for match in re.finditer(r"\[[^\]]*\]\(([^)]+)\)", content):
         target = match.group(1).strip().split("#", 1)[0]
         if not target or re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target) or target.startswith("//"):
             continue
-        resolved = ((ROOT / rel).parent / target).resolve()
-        if not resolved.exists():
-            error(f"{rel}: broken local link: {target}")
+        if not ((ROOT / rel).parent / target).resolve().exists():
+            error(f"{rel}: broken local Markdown link: {target}")
+    for match in re.finditer(r"\x60([^\x60]+)\x60", content):
+        target = match.group(1).strip().rstrip(".,;:")
+        if not (target.startswith(("coding-prompt-system/", "scripts/", ".github/")) or target in {"README.md", "masterprompt.md"}):
+            continue
+        if not (ROOT / target).exists():
+            error(f"{rel}: broken inline repository path: {target}")
+
+# Project prompt uses MASTER PROMPT V1/V2 headings; other docs use VERSION V1/V2.
+for rel, content in contents.items():
+    if not rel.endswith(".md") or rel == "README.md":
+        continue
+    headings = ("MASTER PROMPT V1", "MASTER PROMPT V2", "MASTER PROMPT V3") if rel == "masterprompt.md" else ("VERSION V1", "VERSION V2", "VERSION V3")
+    for heading in headings:
+        if heading not in content:
+            error(f"{rel}: missing required version heading: {heading}")
 
 req_text = contents.get("coding-prompt-system/REQUIREMENTS.md", "")
 ac_text = contents.get("coding-prompt-system/ACCEPTANCE_CRITERIA.md", "")
@@ -88,17 +111,16 @@ except (OSError, UnicodeError) as exc:
 except Exception as exc:
     error(f"variables.yaml parse/validation error: {exc}")
 
-workflow = ROOT / ".github/workflows/coding-prompt-docs.yml"
-if not workflow.is_file():
-    error("missing .github/workflows/coding-prompt-docs.yml")
-else:
-    text = workflow.read_text(encoding="utf-8")
-    if "validate_coding_prompt_docs.py" not in text:
-        error("CI workflow does not invoke the documentation validator")
+workflow_text = contents.get(".github/workflows/coding-prompt-docs.yml", "")
+for trigger in ['"masterprompt.md"', '"README.md"', '"coding-prompt-system/**"', '"scripts/validate_coding_prompt_docs.py"']:
+    if trigger not in workflow_text:
+        error(f"CI workflow missing path trigger: {trigger}")
+if "validate_coding_prompt_docs.py" not in workflow_text:
+    error("CI workflow does not invoke the documentation validator")
 
 if errors:
     print("FAIL: documentation validation found issues:")
     for item in errors:
         print(f"- {item}")
     sys.exit(1)
-print(f"PASS: {len(BASELINE)} baseline files, local Markdown links, version sections, REQ/AC traceability, YAML config, and CI invocation.")
+print(f"PASS: {len(BASELINE)} required paths, canonical references, Markdown links, inline repository paths, version headings, REQ/AC traceability, YAML configuration, and CI triggers.")
