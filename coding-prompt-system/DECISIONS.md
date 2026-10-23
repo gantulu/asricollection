@@ -42,3 +42,19 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — DOCUMENTATION CONTROL DECISIONS
+Status: Implemented
+Based on: V1
+Change summary: Record scope authorization and the V2 status model.
+
+### DEC-DOCS-002 — Implement documentation controls
+- Date: 2026-10-23
+- Context: Audit identified inconsistent status semantics, incomplete requirement traceability, underspecified workflow stages, and no automated validator.
+- Decision: Add V2 controls in stable existing documentation paths and add a Python validator plus GitHub Actions workflow.
+- Status: Approved for the scope stated in the current user request.
+- Evidence: Current conversation request; resulting commit reference is pending until commit exists.
+- Requirements: REQ-009–REQ-020; acceptance: AC-009–AC-020.
+- Boundary: No app code, backend, database/schema/RLS, secrets, deployment, or real-payment operations.
+- Consequence: V2 is Verified only after automated and cross-file checks pass.
