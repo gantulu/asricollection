@@ -5,8 +5,8 @@ version_index:
     status: Draft
     description: Initial reusable coding configuration
   - version: V2
-    status: Proposed
-    description: Reserved additive extension
+    status: Implemented
+    description: Documentation control contract and validation
   - version: V3
     status: Proposed
     description: Reserved additive extension
@@ -61,3 +61,9 @@ verification:
 # Append approved keys or overrides here; do not silently alter V1.
 # VERSION V3 — PROPOSED ADDITIVE EXTENSION
 # Reserved for future approved additions.
+
+# VERSION V2 — DOCUMENTATION CONTROL CONTRACT
+# Status: Implemented | Based on: V1
+# Keep configuration keys typed and validate this YAML with scripts/validate_coding_prompt_docs.py.
+# active_version identifies the configuration schema in use; it does not grant approval to execute a task.
+# Scope/approval flags are constraints, not permission to bypass explicit user authorization.
