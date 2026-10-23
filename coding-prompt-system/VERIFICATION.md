@@ -48,3 +48,21 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — AUTOMATED VALIDATION CONTRACT
+Status: Implemented
+Based on: V1
+Change summary: Add deterministic checks for documentation integrity and traceability.
+
+### Required automated checks
+1. All 13 baseline documentation files exist at their stable paths.
+2. Markdown local links resolve to existing files (ignore external URLs and anchor-only fragments; validate local target paths).
+3. Each Markdown document retains V1, V2, and V3 version headings; the V2 status is not called Verified unless the relevant checks actually pass.
+4. REQ-009–REQ-020 map to AC-009–AC-020 and acceptance criteria point back to requirement IDs.
+5. `variables.yaml` parses as YAML and contains the required top-level keys and allowed lifecycle statuses.
+6. GitHub Actions runs the validator on pushes and pull requests.
+
+### Execution
+Run: `python scripts/validate_coding_prompt_docs.py`
+Expected successful exit code: 0. Any validation finding must produce a non-zero exit code. Record the actual command output; do not claim success until it has run.
