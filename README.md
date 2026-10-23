@@ -71,3 +71,21 @@ Reserved for additive navigation or process updates; preserve V1.
 ## VERSION V3 — ADDITIVE EXTENSION
 Status: Proposed
 Reserved for future additions; preserve V1 and V2.
+
+
+## VERSION V2 — DOCUMENTATION CONTROL CONTRACT
+Status: Implemented
+Based on: V1
+Change summary: Unify lifecycle and audit classifications; add requirement traceability and automated documentation validation.
+
+### Canonical status contract
+- Version/requirement lifecycle: Proposed → Approved → Implemented → Verified; Blocked and Unverified are non-success terminal/current states. Rejected and Superseded are decision-record statuses only.
+- Audit classification describes observed implementation only: Existing, Partial, Missing, Unverified, Blocked. It is not a lifecycle status.
+- Status transitions require evidence. Approval is explicit; implementation requires a recorded change; verification requires recorded check output.
+- V1 remains immutable baseline content. V2/V3 additions are stored in this same file; filenames and paths remain stable.
+
+### Traceability chain
+Requirement ID → acceptance criterion ID → implementation/file evidence → verification check/result. Missing links must be reported, never inferred.
+
+### Validation
+Run `python scripts/validate_coding_prompt_docs.py`. GitHub Actions runs the same validator for pull requests and pushes. See [VERIFICATION.md](coding-prompt-system/VERIFICATION.md).
