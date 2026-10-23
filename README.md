@@ -65,8 +65,8 @@ Status: Draft
 Defines navigation, stable filenames, internal versioning, operating principles, and workflow.
 
 ## VERSION V2 — ADDITIVE EXTENSION
-Status: Proposed
-Reserved for additive navigation or process updates; preserve V1.
+Status: Implemented
+Changes: See the V2 documentation control contract below; preserve V1.
 
 ## VERSION V3 — ADDITIVE EXTENSION
 Status: Proposed
