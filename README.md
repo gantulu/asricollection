@@ -4,6 +4,8 @@ Dokumentasi untuk workflow AI coding yang modular, berbasis bukti, dapat diaudit
 
 ## Repository layout
 
+`masterprompt.md` is the canonical e-commerce development prompt. V1 and additive V2 are maintained in this single file; do not create separate versioned prompt files.
+
 ```text
 README.md
 coding-prompt-system/
