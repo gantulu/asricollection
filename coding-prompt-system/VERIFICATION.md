@@ -66,3 +66,10 @@ Change summary: Add deterministic checks for documentation integrity and traceab
 ### Execution
 Run: `python scripts/validate_coding_prompt_docs.py`
 Expected successful exit code: 0. Any validation finding must produce a non-zero exit code. Record the actual command output; do not claim success until it has run.
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
