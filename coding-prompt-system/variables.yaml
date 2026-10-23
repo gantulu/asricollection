@@ -57,8 +57,8 @@ verification:
 
 # VERSION V1 — BASELINE
 # Initial configuration contract is defined above.
-# VERSION V2 — PROPOSED ADDITIVE EXTENSION
-# Append approved keys or overrides here; do not silently alter V1.
+# VERSION V2 — IMPLEMENTED ADDITIVE EXTENSION
+# V2 controls are documented below; preserve V1 and do not silently alter prior configuration.
 # VERSION V3 — PROPOSED ADDITIVE EXTENSION
 # Reserved for future approved additions.
 
