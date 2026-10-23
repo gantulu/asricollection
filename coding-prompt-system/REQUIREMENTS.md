@@ -66,7 +66,7 @@ Each record must provide: ID, title, description, source, priority (P0/P1/P2), l
 #### REQ-009 — Canonical lifecycle and audit statuses
 - Description: Separate lifecycle status from observed implementation classification and define evidence-backed transitions.
 - Source: Documentation-system audit; Priority: P0; Status: Implemented
-- Dependencies: REQ-007; Acceptance: AC-009; Evidence: `coding-prompt-system/README.md`, `coding-prompt-system/VERIFICATION.md`; Introduced: V2
+- Dependencies: REQ-007; Acceptance: AC-009; Evidence: `README.md`, `coding-prompt-system/VERIFICATION.md`; Introduced: V2
 
 #### REQ-010 — Requirement traceability
 - Description: Link every requirement to acceptance criteria, change evidence, and verification results.
@@ -122,3 +122,10 @@ Each record must provide: ID, title, description, source, priority (P0/P1/P2), l
 - Description: Keep audit read-only by default and require separate explicit authorization for code/backend/database/secrets/deployment/real-payment side effects.
 - Source: User workflow constraints; Priority: P0; Status: Implemented
 - Dependencies: REQ-003, REQ-004, REQ-008; Acceptance: AC-020; Evidence: `coding-prompt-system/INSTRUCTION.md`, `coding-prompt-system/WORKFLOW.md`; Introduced: V2
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
