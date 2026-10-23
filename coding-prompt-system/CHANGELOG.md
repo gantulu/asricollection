@@ -47,3 +47,10 @@ Approval reference: User request in the current conversation to implement versio
 Changed files: Existing 13 documentation files plus `scripts/validate_coding_prompt_docs.py` and `.github/workflows/coding-prompt-docs.yml`.
 Summary: Standardized lifecycle and audit statuses; added REQ-009–REQ-020 and AC-009–AC-020; defined workflow stage contracts; aligned source/configuration rules; added automated documentation validation and CI.
 Verification evidence: Pending execution of validator and cross-file checks. Do not mark V2 Verified until checks pass.
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
