@@ -2,7 +2,7 @@
 
 ## VERSION INDEX
 - V1 — Baseline specification; status: Draft.
-- V2 — Reserved for additive changes; status: Proposed.
+- V2 — Reserved for additive changes; status: Implemented.
 - V3 — Reserved for subsequent additive changes; status: Proposed.
 
 ## VERSIONING RULES
@@ -44,9 +44,9 @@ Summarize outcomes, changed files, requirement traceability, evidence, risks, an
 If the user explicitly authorizes a precise implementation scope and workflow policy allows it, proceed within that scope. Never bypass higher-priority safety requirements.
 
 ## VERSION V2 — ADDITIVE EXTENSION
-Status: Proposed
+Status: Implemented
 Based on: V1
-Changes: Not yet specified. Add approved additions here without deleting V1.
+Changes: See the V2 additive control sections in this file.
 
 ## VERSION V3 — ADDITIVE EXTENSION
 Status: Proposed
