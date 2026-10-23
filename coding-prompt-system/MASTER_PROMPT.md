@@ -50,3 +50,18 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — DOCUMENTATION CONTROL CONTRACT
+Status: Implemented
+Based on: V1
+Change summary: Standardized lifecycle, traceability, and execution gates.
+
+### Execution contract
+Every task records: task scope, active document version, requirement IDs, evidence sources, approval boundary, planned files, acceptance criteria, and verification commands. Do not proceed when a required input is missing or a scope conflict is unresolved.
+
+### Status semantics
+Lifecycle status is Proposed, Approved, Implemented, Verified, Blocked, or Unverified. Audit classification is Existing, Partial, Missing, Unverified, or Blocked and must not be mixed with lifecycle status. Only evidence-backed checks can move an item to Verified.
+
+### Traceability
+Maintain Requirement → Acceptance Criterion → File/Change Evidence → Verification Result. Report gaps and skipped checks explicitly. Preserve V1 unchanged.
