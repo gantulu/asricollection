@@ -58,3 +58,10 @@ Change summary: Record scope authorization and the V2 status model.
 - Requirements: REQ-009–REQ-020; acceptance: AC-009–AC-020.
 - Boundary: No app code, backend, database/schema/RLS, secrets, deployment, or real-payment operations.
 - Consequence: V2 is Verified only after automated and cross-file checks pass.
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
