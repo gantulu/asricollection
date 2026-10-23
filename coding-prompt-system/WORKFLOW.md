@@ -52,3 +52,23 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — STAGE CONTRACTS
+Status: Implemented
+Based on: V1
+Change summary: Define inputs, outputs, stop conditions, and continuation rules for each stage.
+
+| Stage | Required inputs | Output | Stop condition | Continue when |
+|---|---|---|---|---|
+| 1. Load | Master prompt, instructions, variables, requirements, source policy, decisions | Loaded-source/version checklist | Required source unreadable or absent | Required inputs are recorded; missing inputs are explicitly scoped |
+| 2. Audit | Repository/ref, task scope, accessible evidence | Evidence-based current-state report | Scope/access unclear or evidence insufficient for a claim | Claims are linked to evidence and limitations stated |
+| 3. Classify | Requirements and audit findings | Requirement status matrix | Conflicts or unknowns materially affect correctness | Each requirement has status, dependency, and evidence/Pending |
+| 4. Recommend/plan | Status matrix, constraints | Alternatives/recommendation, file plan, ACs, risks | Scope change or unresolved architecture decision | Plan is traceable and stays within requested scope |
+| 5. Approval gate | Plan and exact side effects | Approval record or hold | Explicit approval missing where required | Approved scope is unambiguous; otherwise stop before writes |
+| 6. Implement | Approved plan and current repo state | Minimal changes and change record | Drift, unexpected side effect, or scope expansion | Change remains in scope; deviations are reported before proceeding |
+| 7. Verify | Diff, ACs, available tools | PASS/FAIL/BLOCKED/NOT RUN/NOT AVAILABLE results | Critical check fails or cannot safely run | Results and limitations are accurately recorded |
+| 8. Report | Change record and verification output | Summary, files, commit, evidence, unresolved items | Evidence needed for a claim is missing | Report distinguishes completed, verified, and pending work |
+
+### Global continuation rule
+A stage may not silently skip its stop condition. Approval for documentation changes does not authorize application code, backend/database/schema/RLS/secrets, deployment, or real-payment operations. Preserve V1 text above.
