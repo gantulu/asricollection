@@ -379,3 +379,20 @@ In addition to the V1 Final Report, include:
 5. Confirmation of whether the work stayed within the approved frontend/mock-data scope.
 6. Remaining risks, unverified requirements, and blockers.
 7. Version notes identifying V2 additions without erasing V1 requirements.
+
+
+---
+
+# MASTER PROMPT V3 — CROSS-DOCUMENT CONSOLIDATION
+Status: Implemented
+Based on: V2
+Change summary: Establishes one canonical source for general coding workflow rules while preserving all V1/V2 storefront and Admin requirements above.
+
+## Document authority and duplication control
+
+- `coding-prompt-system/MASTER_PROMPT.md` is the canonical source for reusable AI coding workflow rules: evidence-first auditing, requirement/status semantics, approval gates, minimal-change discipline, verification, reporting, and general change control.
+- This `masterprompt.md` is the canonical source for Asri Collection e-commerce requirements: Storefront pages, Admin scope, marketplace UX constraints, mock-data contract, frontend acceptance criteria, and project-specific exclusions.
+- When both files are loaded, apply the general workflow from `coding-prompt-system/MASTER_PROMPT.md` and the project requirements from this file. Do not copy the general workflow into future project-specific additions.
+- If guidance appears inconsistent, preserve higher-priority safety requirements and explicit project scope boundaries; stop and report unresolved conflicts rather than silently choosing a broader scope.
+- Existing V1 and V2 content above is retained as the historical baseline. This V3 boundary clarifies how to use it; it does not delete or weaken prior requirements.
+- Future additions should be placed in the document that owns the subject. Add a cross-reference instead of duplicating the full rule text.
