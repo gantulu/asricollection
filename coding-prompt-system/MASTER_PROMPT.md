@@ -65,3 +65,19 @@ Lifecycle status is Proposed, Approved, Implemented, Verified, Blocked, or Unver
 
 ### Traceability
 Maintain Requirement → Acceptance Criterion → File/Change Evidence → Verification Result. Report gaps and skipped checks explicitly. Preserve V1 unchanged.
+
+
+## V3 — CROSS-DOCUMENT RESPONSIBILITY BOUNDARY
+Status: Implemented
+Based on: V2
+Change summary: Defines this file as the canonical home for reusable AI coding workflow and control rules.
+
+### Canonical responsibility
+
+This file owns reusable, repository-agnostic coding workflow rules: evidence-first audit, requirement classification, approval gates, version/status semantics, minimal changes, verification, reporting, and general change control.
+
+Project-specific specifications belong in their relevant project master prompt. For Asri Collection, `/masterprompt.md` owns the e-commerce Storefront and Admin requirements, mock-data contract, UX acceptance criteria, and frontend-only scope boundaries.
+
+When both documents are used, apply the general workflow from this file and the project-specific requirements from the relevant project prompt. Do not duplicate full generic workflow sections in project prompts; link back to this file instead. Preserve stricter safety and scope boundaries. If a conflict cannot be resolved from the documents, stop and report it.
+
+Earlier V1 and V2 text remains preserved. This section changes document authority and future authoring practice; it does not remove or weaken existing requirements.
