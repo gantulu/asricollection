@@ -72,3 +72,10 @@ Change summary: Define inputs, outputs, stop conditions, and continuation rules 
 
 ### Global continuation rule
 A stage may not silently skip its stop condition. Approval for documentation changes does not authorize application code, backend/database/schema/RLS/secrets, deployment, or real-payment operations. Preserve V1 text above.
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
