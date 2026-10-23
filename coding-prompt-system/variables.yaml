@@ -1,0 +1,63 @@
+# Variables configuration
+# Keep this filename stable. Version history is recorded in this file.
+version_index:
+  - version: V1
+    status: Draft
+    description: Initial reusable coding configuration
+  - version: V2
+    status: Proposed
+    description: Reserved additive extension
+  - version: V3
+    status: Proposed
+    description: Reserved additive extension
+
+active_version: V1
+
+project:
+  name: "Asri Collection"
+  repository: "gantulu/asricollection"
+  branch: "main"
+  source_of_truth: "Actual repository and approved official documentation"
+
+technology:
+  frontend: "React"
+  build_tool: "Vite"
+  language: "Follow existing repository"
+  styling: "Follow existing repository"
+  backend: "Supabase"
+  payment_provider: "Duitku POP"
+
+task:
+  type: "Coding"
+  target_feature: ""
+  description: ""
+  mode: "audit-first"
+
+scope:
+  in_scope: []
+  out_of_scope:
+    - "Database/schema/RLS changes without explicit authorization"
+    - "Secrets or environment changes without explicit authorization"
+    - "Deployment without explicit authorization"
+    - "Real payment execution"
+  mock_data_policy: "Use mock data only when specified or approved"
+
+workflow:
+  audit_first: true
+  approval_gate: true
+  read_only_default: true
+  minimal_changes: true
+
+verification:
+  build: true
+  lint: true
+  tests: true
+  regression: true
+  report_unavailable_checks: true
+
+# VERSION V1 — BASELINE
+# Initial configuration contract is defined above.
+# VERSION V2 — PROPOSED ADDITIVE EXTENSION
+# Append approved keys or overrides here; do not silently alter V1.
+# VERSION V3 — PROPOSED ADDITIVE EXTENSION
+# Reserved for future approved additions.
