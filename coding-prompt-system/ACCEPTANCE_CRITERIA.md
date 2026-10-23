@@ -62,3 +62,10 @@ Change summary: Add measurable acceptance checks for REQ-009–REQ-020.
 - **AC-018 (REQ-018):** Plan template maps requirements to files, dependencies, risks, acceptance, approval, and verification.
 - **AC-019 (REQ-019):** A local Python validator checks required paths, Markdown local links, version headings, traceability, and YAML; CI invokes it on push and pull request.
 - **AC-020 (REQ-020):** Instructions and workflow explicitly prohibit out-of-scope side effects without separate authorization.
+
+
+## V3 — CANONICAL DOCUMENT REFERENCES
+Status: Implemented
+Based on: V2
+
+This document retains its specific purpose and historical V1/V2 content. Reusable coding workflow, approval gates, version/status semantics, and general change control are owned by [coding-prompt-system/MASTER_PROMPT.md](MASTER_PROMPT.md). Asri Collection Storefront/Admin requirements and frontend-only scope are owned by [masterprompt.md](../masterprompt.md). Keep this document focused on its named function; refer to those sources instead of copying their full rules.
