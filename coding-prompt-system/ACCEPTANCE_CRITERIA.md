@@ -43,3 +43,22 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — TRACEABLE ACCEPTANCE CRITERIA
+Status: Implemented
+Based on: V1
+Change summary: Add measurable acceptance checks for REQ-009–REQ-020.
+
+- **AC-009 (REQ-009):** Lifecycle statuses and audit classifications are separately defined and consistently used; no status is inferred from another.
+- **AC-010 (REQ-010):** Every REQ-009–REQ-020 record names at least one AC ID, and each AC ID names its related requirement; verification evidence is recorded or explicitly Pending.
+- **AC-011 (REQ-011):** All 13 original documentation paths remain stable; V1 sections remain present; V2 status is not represented as Verified before checks pass.
+- **AC-012 (REQ-012):** Each workflow stage specifies inputs, outputs, stop conditions, and continuation conditions.
+- **AC-013 (REQ-013):** Source precedence is ordered; conflicts and inaccessible sources have an explicit handling rule.
+- **AC-014 (REQ-014):** Validator parses variables.yaml and checks required configuration keys and allowed status values.
+- **AC-015 (REQ-015):** Status promotion rules require explicit approval, recorded implementation, or passing verification as appropriate.
+- **AC-016 (REQ-016):** Audit template includes repo/branch/commit/scope, inspected files, findings, commands/outcomes, and limitations.
+- **AC-017 (REQ-017):** Changelog and decision records support approval/evidence links and do not fabricate unknown dates or outcomes.
+- **AC-018 (REQ-018):** Plan template maps requirements to files, dependencies, risks, acceptance, approval, and verification.
+- **AC-019 (REQ-019):** A local Python validator checks required paths, Markdown local links, version headings, traceability, and YAML; CI invokes it on push and pull request.
+- **AC-020 (REQ-020):** Instructions and workflow explicitly prohibit out-of-scope side effects without separate authorization.
