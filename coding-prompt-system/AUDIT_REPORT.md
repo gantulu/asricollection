@@ -41,3 +41,17 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — CROSS-FILE AUDIT RECORD
+Status: Implemented
+Based on: V1
+Change summary: Define the reproducible audit record.
+
+### Required audit record
+- Repository, branch, commit, date when known, scope, and inspected files.
+- Requirement matrix: ID, lifecycle status, audit classification where applicable, AC ID, evidence, gap, risk, recommendation.
+- Checks: exact command, result vocabulary, output/evidence, environment limitations.
+- Cross-file checks: stable path inventory, version indexes, local links, REQ-to-AC mapping, YAML configuration, CI-to-validator link.
+- Limitations: inaccessible files and checks not run.
+- Conclusion: separate observed implementation facts from intended work; never infer absence from failed access.
