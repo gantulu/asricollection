@@ -43,3 +43,19 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — DOCUMENTATION CONTROL PLAN
+Status: Implemented
+Based on: V1
+Change summary: Add traceable plan for documentation controls.
+
+### Plan DOCS-V2
+- Scope: Documentation workflow, requirement traceability, configuration validation, CI validation, and cross-file consistency only.
+- Out of scope: Application code, backend, database/schema/RLS, secrets, deployment, and real payments.
+- Requirements: REQ-009–REQ-020; acceptance: AC-009–AC-020.
+- Files: Existing 13 documentation files plus `scripts/validate_coding_prompt_docs.py` and `.github/workflows/coding-prompt-docs.yml`.
+- Risks: Markdown link parsing edge cases, YAML parser dependency, stale status/evidence. Mitigation: deterministic checks and explicit result reporting.
+- Verification: `python scripts/validate_coding_prompt_docs.py`, inspect stable paths/version headings, and confirm CI invokes validator.
+- Approval: Current user request authorizes these documentation controls only.
+- Rollback: Revert the documentation-only commit while preserving prior history.
