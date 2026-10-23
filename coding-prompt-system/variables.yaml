@@ -11,7 +11,7 @@ version_index:
     status: Proposed
     description: Reserved additive extension
 
-active_version: V1
+active_version: V2
 
 project:
   name: "Asri Collection"
