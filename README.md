@@ -57,7 +57,7 @@ This README describes the documentation system. It does not itself prove a proje
 
 ## VERSION INDEX
 - V1 — Initial documentation entry point; status: Draft.
-- V2 — Additive documentation updates; status: Proposed.
+- V2 — Additive documentation updates; status: Implemented.
 - V3 — Future additive updates; status: Proposed.
 
 ## VERSION V1 — BASELINE
