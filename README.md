@@ -4,7 +4,7 @@ Dokumentasi untuk workflow AI coding yang modular, berbasis bukti, dapat diaudit
 
 ## Repository layout
 
-`masterprompt.md` is the canonical e-commerce development prompt. V1 and additive V2 are maintained in this single file; do not create separate versioned prompt files.
+`coding-prompt-system/MASTER_PROMPT.md` is the single source of truth for reusable, repository-agnostic AI coding workflow and controls. [`masterprompt.md`](masterprompt.md) is the source of truth for Asri Collection e-commerce requirements. Supporting documents retain their specific functions and link to these canonical sources instead of duplicating their full rules. Preserve V1/V2 history; future changes are additive unless explicitly approved.
 
 ```text
 README.md
@@ -25,14 +25,15 @@ coding-prompt-system/
 
 ## Start here
 
-1. Read [MASTER_PROMPT.md](coding-prompt-system/MASTER_PROMPT.md).
-2. Load [INSTRUCTION.md](coding-prompt-system/INSTRUCTION.md) and [variables.yaml](coding-prompt-system/variables.yaml).
-3. Review [SOURCE_OF_TRUTH.md](coding-prompt-system/SOURCE_OF_TRUTH.md) and [REQUIREMENTS.md](coding-prompt-system/REQUIREMENTS.md).
-4. Record findings in [AUDIT_REPORT.md](coding-prompt-system/AUDIT_REPORT.md).
-5. Define [ACCEPTANCE_CRITERIA.md](coding-prompt-system/ACCEPTANCE_CRITERIA.md) and [IMPLEMENTATION_PLAN.md](coding-prompt-system/IMPLEMENTATION_PLAN.md).
-6. Follow [WORKFLOW.md](coding-prompt-system/WORKFLOW.md); obtain required approval before changes.
-7. Verify using [VERIFICATION.md](coding-prompt-system/VERIFICATION.md).
-8. Record decisions and changes in [DECISIONS.md](coding-prompt-system/DECISIONS.md) and [CHANGELOG.md](coding-prompt-system/CHANGELOG.md).
+1. Read [coding-prompt-system/MASTER_PROMPT.md](coding-prompt-system/MASTER_PROMPT.md) for general workflow and controls.
+2. Read [masterprompt.md](masterprompt.md) for Asri Collection-specific requirements.
+3. Load [INSTRUCTION.md](coding-prompt-system/INSTRUCTION.md) and [variables.yaml](coding-prompt-system/variables.yaml).
+4. Review [SOURCE_OF_TRUTH.md](coding-prompt-system/SOURCE_OF_TRUTH.md) and [REQUIREMENTS.md](coding-prompt-system/REQUIREMENTS.md).
+5. Record findings in [AUDIT_REPORT.md](coding-prompt-system/AUDIT_REPORT.md).
+6. Define [ACCEPTANCE_CRITERIA.md](coding-prompt-system/ACCEPTANCE_CRITERIA.md) and [IMPLEMENTATION_PLAN.md](coding-prompt-system/IMPLEMENTATION_PLAN.md).
+7. Follow [WORKFLOW.md](coding-prompt-system/WORKFLOW.md); obtain required approval before changes.
+8. Verify using [VERIFICATION.md](coding-prompt-system/VERIFICATION.md).
+9. Record decisions and changes in [DECISIONS.md](coding-prompt-system/DECISIONS.md) and [CHANGELOG.md](coding-prompt-system/CHANGELOG.md).
 
 ## Stable filenames and internal versioning
 
@@ -91,3 +92,14 @@ Requirement ID → acceptance criterion ID → implementation/file evidence → 
 
 ### Validation
 Run `python scripts/validate_coding_prompt_docs.py`. GitHub Actions runs the same validator for pull requests and pushes. See [VERIFICATION.md](coding-prompt-system/VERIFICATION.md).
+
+
+## V3 — CANONICAL DOCUMENT OWNERSHIP
+Status: Implemented
+Based on: V2
+
+- General coding workflow and control rules: [coding-prompt-system/MASTER_PROMPT.md](coding-prompt-system/MASTER_PROMPT.md).
+- Asri Collection Storefront/Admin requirements and frontend-only scope: [masterprompt.md](masterprompt.md).
+- Other documents retain their specific roles and refer to these sources; do not copy full generic instructions into them.
+- Preserve all V1/V2 content. Future changes are additive unless explicitly approved.
+- The documentation validator checks canonical references, local links, literal repository paths, version sections, requirement-to-acceptance traceability, configuration, and CI wiring.
