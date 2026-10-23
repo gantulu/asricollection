@@ -43,3 +43,15 @@ Changes: Not yet specified. Add approved additions here without deleting V1.
 Status: Proposed
 Based on: V2
 Changes: Reserved. Add approved additions here without deleting V1 or V2.
+
+
+## VERSION V2 — DOCUMENTATION CONTROL CONTRACT
+Status: Implemented
+Based on: V1
+Change summary: Make status transitions, scope gates, and audit evidence mandatory.
+
+### Required execution record
+Before changes, record task/scope, active version, in-scope and out-of-scope actions, requirement IDs, evidence, target files, acceptance criteria, and verification plan. If any required detail is unavailable, label it Unverified or Blocked and do not fabricate it.
+
+### Status gate
+Proposed work requires explicit approval when approval is required. Approved means authorized, not implemented. Implemented means the change exists. Verified means the named check ran and passed. Keep failed, skipped, and unavailable checks distinct.
